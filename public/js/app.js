@@ -3208,9 +3208,32 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   name: "PostComponent",
+  data: function data() {
+    return {
+      name: 'Вася',
+      age: 20
+    };
+  },
+  methods: {
+    sayHello: function sayHello() {
+      console.log('hello!');
+    },
+    sayHi: function sayHi() {
+      console.log('hi!');
+    }
+  },
+  computed: {
+    vasyaJob: function vasyaJob() {
+      return this.name + ' работает в булочной';
+    }
+  },
   components: {
     SinglePostComponent: _SinglePostComponent__WEBPACK_IMPORTED_MODULE_0__["default"]
   }
@@ -8673,7 +8696,23 @@ var render = function () {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", [_c("SinglePostComponent")], 1)
+  return _c(
+    "div",
+    [
+      _c("div", [_vm._v("111")]),
+      _vm._v(" "),
+      _c("SinglePostComponent"),
+      _vm._v(" "),
+      _c("div", [_vm._v("Name: " + _vm._s(_vm.name))]),
+      _vm._v(" "),
+      _c("div", [_vm._v("Job: " + _vm._s(_vm.vasyaJob))]),
+      _vm._v(" "),
+      _c("button", { on: { click: _vm.sayHello } }, [_vm._v("Hello")]),
+      _vm._v(" "),
+      _c("button", { on: { click: _vm.sayHi } }, [_vm._v("Hi")]),
+    ],
+    1
+  )
 }
 var staticRenderFns = []
 render._withStripped = true
@@ -8697,7 +8736,7 @@ var render = function () {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", [_vm._v("\n     single post\n ")])
+  return _c("div", [_vm._v("\n     single post1\n ")])
 }
 var staticRenderFns = []
 render._withStripped = true

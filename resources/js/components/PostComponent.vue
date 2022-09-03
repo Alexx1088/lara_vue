@@ -1,7 +1,11 @@
 <template>
-
        <div>
-   <SinglePostComponent></SinglePostComponent>
+           <div>111</div>
+     <SinglePostComponent></SinglePostComponent>
+           <div>Name: {{name}}</div>
+           <div>Job: {{vasyaJob}}</div>
+           <button @click="sayHello">Hello</button>
+           <button @click="sayHi">Hi</button>
     </div>
 </template>
 
@@ -10,7 +14,29 @@
     export default {
         name: "PostComponent",
 
-        components: {
+        data() {
+return {
+    name: 'Вася',
+    age: 20
+}
+        },
+    methods: {
+       sayHello(){
+console.log('hello!')
+       },
+sayHi() {
+    console.log('hi!')
+}
+    },
+
+  computed: {
+    vasyaJob() {
+        return this.name + ' работает в булочной'
+    }
+  },
+
+
+       components: {
             SinglePostComponent
         }
     }

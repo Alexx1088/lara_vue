@@ -13,7 +13,7 @@
         </div>
     </div>-->
     <div>
-        single post
+        single post1
     </div>
 
 </template>
