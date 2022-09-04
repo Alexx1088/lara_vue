@@ -3228,6 +3228,9 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   name: "PostComponent",
@@ -3236,18 +3239,28 @@ __webpack_require__.r(__webpack_exports__);
       persons: [{
         id: 1,
         name: 'Vasya',
-        age: 20,
+        age: 21,
         job: 'coach'
       }, {
         id: 2,
         name: 'Elena',
-        age: 17,
+        age: 16,
         job: 'rest'
       }, {
         id: 3,
         name: 'Petr',
         age: 34,
         job: 'seller'
+      }, {
+        id: 4,
+        name: 'Ksenia',
+        age: 21,
+        job: 'traveller'
+      }, {
+        id: 5,
+        name: 'Olga',
+        age: 25,
+        job: 'teacher'
       }]
     };
   },
@@ -3260,8 +3273,15 @@ __webpack_require__.r(__webpack_exports__);
     }
   },
   computed: {
-    vasyaJob: function vasyaJob() {
-      return this.name + ' работает в булочной';
+    personsAgeMoreTwenty: function personsAgeMoreTwenty() {
+      return this.persons.filter(function (person) {
+        return person.age > 20;
+      });
+    },
+    personAgeLessTwenty: function personAgeLessTwenty() {
+      return this.persons.filter(function (persons) {
+        return persons.age < 20;
+      });
     }
   },
   components: {
@@ -8726,17 +8746,14 @@ var render = function () {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c(
-    "div",
-    [
-      _c("SinglePostComponent"),
+  return _c("div", [
+    _c("table", { staticClass: "table" }, [
+      _vm._m(0),
       _vm._v(" "),
-      _c("table", { staticClass: "table" }, [
-        _vm._m(0),
-        _vm._v(" "),
-        _c(
-          "tbody",
-          _vm._l(_vm.persons, function (person) {
+      _c(
+        "tbody",
+        [
+          _vm._l(_vm.personsAgeMoreTwenty, function (person) {
             return _c("tr", [
               _c("th", { attrs: { scope: "row" } }, [
                 _vm._v(_vm._s(person.id)),
@@ -8749,12 +8766,27 @@ var render = function () {
               _c("td", [_vm._v(_vm._s(person.job))]),
             ])
           }),
-          0
-        ),
-      ]),
-    ],
-    1
-  )
+          _vm._v(" "),
+          _c("div", [_vm._v("personAgeLessTwenty")]),
+          _vm._v(" "),
+          _vm._l(_vm.personAgeLessTwenty, function (person) {
+            return _c("tr", [
+              _c("th", { attrs: { scope: "row" } }, [
+                _vm._v(_vm._s(person.id)),
+              ]),
+              _vm._v(" "),
+              _c("td", [_vm._v(_vm._s(person.name))]),
+              _vm._v(" "),
+              _c("td", [_vm._v(_vm._s(person.age))]),
+              _vm._v(" "),
+              _c("td", [_vm._v(_vm._s(person.job))]),
+            ])
+          }),
+        ],
+        2
+      ),
+    ]),
+  ])
 }
 var staticRenderFns = [
   function () {
@@ -8765,11 +8797,11 @@ var staticRenderFns = [
       _c("tr", [
         _c("th", { attrs: { scope: "col" } }, [_vm._v("#")]),
         _vm._v(" "),
-        _c("th", { attrs: { scope: "col" } }, [_vm._v("Name")]),
+        _c("th", { attrs: { scope: "col" } }, [_vm._v("Имя")]),
         _vm._v(" "),
-        _c("th", { attrs: { scope: "col" } }, [_vm._v("Age")]),
+        _c("th", { attrs: { scope: "col" } }, [_vm._v("Возраст")]),
         _vm._v(" "),
-        _c("th", { attrs: { scope: "col" } }, [_vm._v("Job")]),
+        _c("th", { attrs: { scope: "col" } }, [_vm._v("профессия")]),
       ]),
     ])
   },
@@ -8795,7 +8827,7 @@ var render = function () {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", [_vm._v("\n     single post1\n ")])
+  return _c("div", [_vm._v("\n    qqqqq\n        ")])
 }
 var staticRenderFns = []
 render._withStripped = true
